@@ -25,9 +25,9 @@ jobs:
     #- uses: edenhill/librdkafka/master
     
     # use vcpkg
-    - uses: microsoft/vcpkg@master
     - name: run vcpkg and install librdkafka
       run: |
+        git clone https://github.com/Microsoft/vcpkg.git
         cd vcpkg
         ./bootstrap-vcpkg.sh
         ./vcpkg integrate install
