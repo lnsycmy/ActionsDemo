@@ -25,7 +25,7 @@ jobs:
     #- uses: edenhill/librdkafka/master
     
     # use vcpkg
-    - uses: microsoft/vcpkg/master
+    - uses: microsoft/vcpkg@master
     - name: run vcpkg and install librdkafka
       run: |
         cd vcpkg
