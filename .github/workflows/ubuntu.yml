@@ -32,6 +32,10 @@ jobs:
         ./bootstrap-vcpkg.sh
         ./vcpkg integrate install
         vcpkg install librdkafka
+        
+    - name: 检查librdkafka包
+      run: |
+        sudo find / -name librdkafka.so
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
