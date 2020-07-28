@@ -43,7 +43,11 @@ jobs:
         sudo make
         sudo make install
         # view directory
+        sudo find . -name 'librdkafka.so.1'
+        cd /usr/local/lib
+        echo "view lib"
         ls
+
         
     
     # install librdkafka
