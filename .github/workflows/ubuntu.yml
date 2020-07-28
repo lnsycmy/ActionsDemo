@@ -30,6 +30,10 @@ jobs:
         cd /usr/local/
         sudo mkdir nsemq-all
         cd nsemq-all
+        echo "*** create include and lib directory"
+        sudo mkdir include lib
+        cd include
+        sudo mkdir librdkafka avro boost
     
     # git and install librdkakfa
     - name: git and install librdkakfa
@@ -37,16 +41,21 @@ jobs:
         sudo mkdir librdkafka-all
         cd librdkafka-all
         sudo git clone https://github.com/edenhill/librdkafka.git
-        echo "****view git files"
+        echo "*** view git files"
         cd librdkafka
         sudo ./configure --install-deps
         sudo make
         sudo make install
-        # view directory
-        sudo find . -name 'librdkafka.so.1'
-        cd /usr/local/lib
-        echo "view lib"
+        echo "*** copy lib"
+        cp src/librdkafka.* ../lib
+        cp src-cpp/librdkafka++.* ../lib
+        
+        echo "*** view lib"
+        cd ../lib
         ls
+        
+        
+        
 
         
     
