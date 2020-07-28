@@ -24,14 +24,24 @@ jobs:
     # use librdkafka
     #- uses: edenhill/librdkafka/master
     
+    # create nsemq-all root directory
+    - name: create nsemq-all root directory
+      run : |
+        cd /usr/local/
+        sudo mkdir nsemq-all
+        cd nsemq-all
+    
     # git and install librdkakfa
     - name: git and install librdkakfa
       run: |
-        cd /usr/local/
+        sudo mkdir librdkafka-all
+        cd librdkafka-all
+        sudo git clone https://github.com/edenhill/librdkafka.git
+        echo "****view git files"
         ls
-        sudo mkdir nsemq-all
-        ls
-        cd nsemq-all
+        
+        
+        
         
         
     
