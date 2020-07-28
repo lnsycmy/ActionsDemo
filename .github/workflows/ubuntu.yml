@@ -24,22 +24,16 @@ jobs:
     # use librdkafka
     #- uses: edenhill/librdkafka/master
     
-    # use vcpkg
-    - name: run vcpkg and install librdkafka
+    # git and install librdkakfa
+    - name: git and install librdkakfa
       run: |
-        git clone https://github.com/Microsoft/vcpkg.git
-        cd vcpkg
-        ./bootstrap-vcpkg.sh
-        ./vcpkg integrate install
-        vcpkg install librdkafka
+        cd /usr/local/
+        ll
+        sudo mkdir nsemq-all
+        ll
+        cd nsemq-all
         
-    - name: judge librdkafka packages
-      run: |
-       sudo locate librdkafka.so
-
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
+        
     
     # install librdkafka
     # - name: install librdkafka
@@ -48,5 +42,6 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
+        echo Hello, world!
         echo Add other actions to build,
         echo test, and deploy your project.
