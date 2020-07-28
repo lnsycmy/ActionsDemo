@@ -28,9 +28,9 @@ jobs:
     - name: git and install librdkakfa
       run: |
         cd /usr/local/
-        ll
+        ls
         sudo mkdir nsemq-all
-        ll
+        ls
         cd nsemq-all
         
         
