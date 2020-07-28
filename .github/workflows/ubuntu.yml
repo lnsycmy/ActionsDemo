@@ -40,7 +40,7 @@ jobs:
         echo "****view git files"
         cd librdkafka
         sudo ./configure --install-deps
-        make
+        sudo make
         sudo make install
         # view directory
         ls
