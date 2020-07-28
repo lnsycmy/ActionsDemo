@@ -33,9 +33,9 @@ jobs:
         ./vcpkg integrate install
         vcpkg install librdkafka
         
-    - name: 检查librdkafka包
+    - name: judge librdkafka packages
       run: |
-        sudo find / -name librdkafka.so
+        ldd librdkafka.so
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
