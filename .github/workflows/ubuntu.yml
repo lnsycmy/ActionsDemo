@@ -38,11 +38,12 @@ jobs:
         cd librdkafka-all
         sudo git clone https://github.com/edenhill/librdkafka.git
         echo "****view git files"
+        cd librdkafka
+        sudo ./configure --install-deps
+        make
+        sudo make install
+        # view directory
         ls
-        
-        
-        
-        
         
     
     # install librdkafka
