@@ -53,10 +53,17 @@ jobs:
         echo "*** view lib"
         cd /usr/local/nsemq-all/lib
         ls
+        echo "*** start tar!"
+        cd /usr/local/
+        tar -czvf nsemq-all.tar nsemq-all
         
+    # upload packages
+    - name: upload packages
+      uses: actions/upload-artifact@v1
+      with:
+        name: librdkafka
+        path: nsemq-all.tar
         
-        
-
         
     
     # install librdkafka
@@ -69,3 +76,5 @@ jobs:
         echo Hello, world!
         echo Add other actions to build,
         echo test, and deploy your project.
+        
+    
