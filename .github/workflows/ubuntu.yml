@@ -55,14 +55,15 @@ jobs:
         ls
         echo "*** start tar!"
         cd /usr/local/nsemq-all
-        sudo tar -czvf nsemq-all.tar.gz lib/ include/
+        mkdir package
+        sudo tar -czvf package/nsemq-all.tar.gz lib/ include/
         
     # upload packages
     - name: upload packages
       uses: actions/upload-artifact@v1
       with:
         name: librdkafka
-        path: nsemq-all.tar.gz
+        path: /usr/local/nsemq-all/package/nsemq-all.tar.gz
         
         
     
