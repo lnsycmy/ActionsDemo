@@ -59,9 +59,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: nsemq-lib
-        path: |
-         /usr/local/nsemq-all/lib/
-         /usr/local/nsemq-all/include/
+        path: /usr/local/nsemq-all/lib
         
     
     # install librdkafka
