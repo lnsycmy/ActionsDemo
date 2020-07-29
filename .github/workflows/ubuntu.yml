@@ -47,9 +47,9 @@ jobs:
         sudo make
         sudo make install
         echo "*** copy lib"
-        sudo cp src/librdkafka.so /usr/local/nsemq-all/lib
-        sudo cp src-cpp/librdkafka++.so /usr/local/nsemq-all/lib
-        
+        sudo cp src/librdkafka.so src-cpp/librdkafka++.so /usr/local/nsemq-all/lib
+        sudo cp src/rdkafka.h src-cpp/rdkafkacpp.h /usr/local/nsemq-all/include/librdkafka
+
         echo "*** view lib"
         cd /usr/local/nsemq-all/lib
         ls
@@ -60,8 +60,8 @@ jobs:
       with:
         name: nsemq-lib
         path: |
-         /usr/local/nsemq-all/lib
-         /usr/local/nsemq-all/include
+         /usr/local/nsemq-all/lib/
+         /usr/local/nsemq-all/include/
         
     
     # install librdkafka
