@@ -53,9 +53,14 @@ jobs:
         echo "*** view lib"
         cd /usr/local/nsemq-all/lib
         ls
+        
+        
+    # tar nsemq files
+    - name: tar nsemq files
+      run: |
         echo "*** start tar!"
         cd /usr/local/nsemq-all
-        mkdir package
+        sudo mkdir package
         sudo tar -czvf package/nsemq-all.tar.gz lib/ include/
         
     # upload packages
@@ -64,7 +69,6 @@ jobs:
       with:
         name: librdkafka
         path: /usr/local/nsemq-all/package/nsemq-all.tar.gz
-        
         
     
     # install librdkafka
