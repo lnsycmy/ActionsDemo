@@ -47,11 +47,11 @@ jobs:
         sudo make
         sudo make install
         echo "*** copy lib"
-        cp src/librdkafka.* ../lib
-        cp src-cpp/librdkafka++.* ../lib
+        cp src/librdkafka.* /usr/local/nsemq-all/lib
+        cp src-cpp/librdkafka++.* /usr/local/nsemq-all/lib
         
         echo "*** view lib"
-        cd ../lib
+        cd /usr/local/nsemq-all/lib
         ls
         
         
