@@ -41,8 +41,11 @@ jobs:
         cd /usr/local/nsemq-all/
         sudo mkdir avro-all
         cd avro-all
-        wget https://downloads.apache.org/avro/avro-1.9.2/avro-src-1.9.2.tar.gz
+        sudo wget https://downloads.apache.org/avro/avro-1.9.2/avro-src-1.9.2.tar.gz
         echo "*** view wget files"
+        ls
+        echo "*** untar wget files"
+        tar -xzvf avro-src-1.9.2.tar.gz
         ls
         
         
