@@ -33,33 +33,18 @@ jobs:
         echo "*** create include and lib directory"
         sudo mkdir include lib
         cd include
-        sudo mkdir librdkafka avro boost
-    
-    # git and install librdkakfa
-    - name: git and install librdkakfa
+        sudo mkdir librdkafka avro boost         
+        
+    # install avro
+    - name: install avro
       run: |
-        sudo mkdir librdkafka-all
-        cd librdkafka-all
-        sudo git clone https://github.com/edenhill/librdkafka.git
-        echo "*** view git files"
-        cd librdkafka
-        sudo ./configure --install-deps
-        sudo make
-        sudo make install
-        echo "*** copy lib"
-        sudo cp src/librdkafka.so src-cpp/librdkafka++.so /usr/local/nsemq-all/lib
-        sudo cp src/rdkafka.h src-cpp/rdkafkacpp.h /usr/local/nsemq-all/include/librdkafka
-
-        echo "*** view lib"
-        cd /usr/local/nsemq-all/lib
+        cd /usr/local/nsemq-all/
+        sudo mkdir avro-all
+        cd avro-all
+        wget https://downloads.apache.org/avro/avro-1.9.2/avro-src-1.9.2.tar.gz
+        echo "*** view wget files"
         ls
         
-    # upload artifact
-    - name: upload artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: nsemq-lib
-        path: /usr/local/nsemq-all/lib
         
     
     # install librdkafka
