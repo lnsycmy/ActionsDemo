@@ -45,8 +45,12 @@ jobs:
         echo "*** view wget files"
         ls
         echo "*** untar wget files"
-        tar -xzvf avro-src-1.9.2.tar.gz
+        sudo tar -xzvf avro-src-1.9.2.tar.gz
         ls
+        cd avro-src-1.9.2
+        echo "*** view avro files"
+        ls
+        
         
         
     
