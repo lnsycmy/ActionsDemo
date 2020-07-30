@@ -42,16 +42,13 @@ jobs:
         sudo mkdir avro-all
         cd avro-all
         sudo wget https://downloads.apache.org/avro/avro-1.9.2/cpp/avro-cpp-1.9.2.tar.gz
-        echo "*** view wget files"
-        ls
         echo "*** untar wget files"
         sudo tar -xzf avro-cpp-1.9.2.tar.gz
-        ls
         cd avro-cpp-1.9.2
         echo "*** view avro files"
         ls
-        ./build.sh test
-        ./build.sh install
+        sudo ./build.sh test
+        sudo ./build.sh install
         echo "*** view avro install files"
         ls
         
