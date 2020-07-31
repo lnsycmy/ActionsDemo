@@ -34,6 +34,16 @@ jobs:
         sudo mkdir include lib
         cd include
         sudo mkdir librdkafka avro boost         
+    
+    # install avro dependencies
+    - name: install avro dependencies
+      run: |
+       sudo apt-get -y --force-yes install libboost-dev
+       sudo apt-get -y --force-yes install libboost-filesystem-dev
+       sudo apt-get -y --force-yes install libboost-iostreams-dev
+       sudo apt-get -y --force-yes install libboost-program-options-dev
+       sudo apt-get -y --force-yes install libboost-system-dev
+       apt-cache search libboost-dev
         
     # install avro
     - name: install avro
